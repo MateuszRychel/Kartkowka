@@ -1,4 +1,4 @@
-﻿namespace MauiApp5
+namespace MauiApp5
 {
     public partial class MainPage : ContentPage
     {
@@ -9,16 +9,12 @@
             InitializeComponent();
         }
 
-        private void OnCounterClicked(object? sender, EventArgs e)
+        private void ChangeColor(object? sender, EventArgs e)
         {
-            count++;
-
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
+            int red = (int)r.Value;
+            int green = (int)g.Value;      
+            int blue = (int)b.Value;
+            background.BackgroundColor = Color.FromRgb(red, green, blue);
         }
     }
 }
